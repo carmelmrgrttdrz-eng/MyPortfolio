@@ -1,0 +1,185 @@
+*, *::before, *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+:root {
+    --bg-dark: #000000;
+    --bg-card: rgba(10, 16, 26, 0.7);
+    --bg-card-hover: rgba(16, 26, 42, 0.85);
+    --border-color: rgba(255, 255, 255, 0.08);
+    --border-glow: rgba(33, 150, 243, 0.45);
+    --accent-blue: #2196F3;
+    --neon-blue: #2196F3;
+    --text-main: #f3f4f6;
+    --text-muted: #9ca3af;
+    --font-sans: 'Inter', sans-serif;
+    --font-mono: 'JetBrains Mono', monospace;
+    --glow-shadow: 0 0 25px -5px rgba(33, 150, 243, 0.45);
+    --glass-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.8);
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: var(--bg-dark);
+    color: var(--text-main);
+    font-family: var(--font-sans);
+    line-height: 1.6;
+    overflow-x: hidden;
+    background-image: 
+    linear-gradient(to right, rgba(255, 255, 255, 0.02) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
+    background-size: 40px 40px;
+    padding: 10px;
+}
+
+/* HEADER */
+.header-container {
+    display: flex;
+    justify-content: space-between; /* Pushes logo left, nav links right */
+    align-items: center;
+    width: 100%;
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    padding: 14px 28px;
+    border-radius: 14px;
+    background: rgba(8, 12, 20, 0.85);
+    backdrop-filter: blur(16px);
+    box-sizing: border-box;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: #ffffff;
+    text-decoration: none;
+    letter-spacing: -0.5px;
+}
+
+.logo code {
+    color: #2196F3;
+    font-family: monospace;
+    font-size: 1.3rem;
+}
+
+.logo span { color: var(--neon-blue); }
+
+.nav-links {
+    display: flex;
+    gap: 30px;
+    align-items: center;
+}
+
+.nav-links > a {
+    color: #9ca3af;
+    text-decoration: none;
+    font-size: 0.95rem;
+    font-weight: 500;
+    transition: color 0.2s ease;
+}
+
+.nav-links > a:hover {
+    color: #2196F3;
+}
+
+button:focus-visible,
+a:focus-visible {
+    outline: 2px solid #2196F3;
+    outline-offset: 4px;
+    border-radius: 4px;
+}
+
+.nav-dropdown {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.dropdown-toggle {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 0.95rem;
+    font-weight: 500;
+    color: #9ca3af;
+    cursor: pointer;
+    transition: color 0.2s ease;
+    background: none;
+    border: none;
+    padding: 8px 12px;
+    font-family: inherit;
+}
+
+.nav-dropdown.is-open .dropdown-toggle,
+.dropdown-toggle:focus-visible {
+    color: #2196F3;
+}
+
+.dropdown-toggle i {
+    transition: transform 0.25s ease;
+}
+
+.nav-dropdown.is-open .dropdown-toggle i {
+    transform: rotate(180deg);
+}
+
+.dropdown-menu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    transform: translateY(10px);
+    min-width: 110px;
+    padding: 10px;
+    background: rgba(8, 12, 20, 0.95);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 14px;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.9), 0 0 15px rgba(33, 150, 243, 0.2);
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+    pointer-events: none;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    z-index: 10;
+}
+
+.nav-dropdown.is-open .dropdown-menu {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(12px);
+    pointer-events: auto;
+}
+
+.dropdown-menu a {
+    padding: 10px 14px;
+    border-radius: 8px;
+    font-size: 0.85rem;
+    color: #9ca3af;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    text-decoration: none;
+    transition: all 0.2s ease;
+}
+
+.dropdown-menu a:hover,
+.dropdown-menu a:focus-visible {
+    background: rgba(33, 150, 243, 0.12);
+    color: #2196F3;
+    transform: translateX(4px);
+}
+
+.dropdown-menu a i {
+    font-size: 0.8rem;
+    width: 16px;
+    text-align: center;
+}

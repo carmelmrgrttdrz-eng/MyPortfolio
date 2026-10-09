@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"> 
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <header class="header-container">
+        <!--Logo-->
+        <a href="#home" class="logo">
+            <code>&lt;/&gt;</code>CMD
+        </a>
+
+        <!--Navlinks-->
+        <nav class="nav-links">
+            <a href="#home">Home</a>
+
+            <!--Dropdown-->
+            <div class="nav-dropdown" id="about-dropdown-container">
+                <button class="dropdown-toggle" id="about-dropdown-btn" aria-expanded="false" aria-haspopup="true" aria-controls="about-dropdown-menu">
+                    <span>About</span>
+                    <i class="fa-solid fa-chevron-down" style="font-size: 0.7rem;" aria-hidden="true"></i>
+                </button>
+
+                <div class="dropdown-menu" id="about-dropdown-menu" role="menu" aria-label="About Submenu">
+                    <a href="#about" role="menuitem"><i class="fa-solid fa-user" aria-hidden="true"></i> About Me</a>
+                    <a href="#services" role="menuitem"><i class="fa-solid fa-code" aria-hidden="true"></i> Skills</a>
+                    <a href="#projects" role="menuitem"><i class="fa-solid fa-briefcase" aria-hidden="true"></i> Projects</a>
+                    <a href="#skills" role="menuitem"><i class="fa-solid fa-award" aria-hidden="true"></i> Certifications & Achievements</a>
+                    <a href="#testimonials" role="menuitem"><i class="fa-solid fa-users-gear" aria-hidden="true"></i> Leadership</a>
+                </div>
+            </div>
+
+            <a href="#contact">Contact</a>
+        </nav>
+    </header>
+
+    <script src="script.js"></script>
+</body>
+</html>
